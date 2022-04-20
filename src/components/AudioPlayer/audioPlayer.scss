@@ -1,0 +1,100 @@
+.audioplayer-ctnr {
+    border-top: 1px solid white;
+    background-color: var(--theme-background);
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+
+    .play-arrows{
+        width: 25%;
+        max-width: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .left {
+            scale: 0.8;
+            display: flex;
+            justify-content: center;
+            width: 30%;
+        }
+        .center{
+            & .play-pause{
+                scale: 1.5
+            }
+            display: flex;
+            justify-content: center;
+            width: 30%;
+        }
+        .right{
+            scale: 0.8;
+            display: flex;
+            justify-content: center;
+            width: 30%;
+        }
+    }
+    .seek-slider{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & span {
+            display: flex;
+            justify-content: center;
+            width: 15%;
+            font-size: 13px;
+        }
+    }
+}
+
+.material-icons {
+    cursor: pointer;
+}
+
+.horizontal-slider{
+    // background-color: white;
+    margin: 0px 10px;
+    height: 3px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.example-thumb{
+    background-color: white;
+    // padding: 10px;
+    color: black;
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+.example-track{
+    top: 0;
+    bottom: 0;
+    height: 3px;
+    // width: 100%;
+    background-color: var(--theme-color-blue);
+    border-radius: 20px;
+}
+.example-track-1{
+    top: 0;
+    bottom: 0;
+    height: 3px;
+    // width: 100%;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.audio-player{
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    width: 100%;
+    // padding: 15px 0px
+  }
+  

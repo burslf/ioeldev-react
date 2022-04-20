@@ -1,0 +1,66 @@
+.toggle-theme {
+    display: flex;
+    align-items: center;
+    // width: 100%;
+    .checkbox[type="checkbox"] {
+      visibility: hidden;
+      &:checked + label {
+        transform: rotate(360deg) !important;
+        background-color: var(--background-color);
+        &:before {
+          transform: translateX(21px);
+        }
+      }
+    }
+    
+    label {
+      display: flex;
+      width: 45px;
+      height: 25px; 
+      border: 4px solid var(--theme-color-lightblue);
+      border-radius: 99em;
+      position: relative;
+      transition: transform .45s ease-in-out;
+      // transform-origin: 10% 10%;
+      cursor: pointer;
+      
+      &:before {
+        transition: transform .45s ease;
+        transition-delay: .5s;
+        content: "";
+        display: block;
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        background-color: var(--theme-color-lightblue);
+        border-radius: 50%;
+        top: 4px;
+        left: 4px;
+      }
+    }
+  }
+
+  @media only screen and(max-width: 750px){
+    .checkbox[type="checkbox"] {
+      &:checked + label {
+
+        &:before {
+          transform: translateX(16px) !important;
+        }
+      }
+    }
+    label {
+      width: 35px !important;
+      height: 20px !important;
+      border: 3px solid var(--theme-color-lightblue)!important;
+      &::before{
+        border: 3px solid var(--theme-color-lightblue)!important;
+        width: 6px !important;
+        height: 6px !important;
+        left: 3px !important;
+        top: 4px !important
+      }
+    }
+
+
+  }
