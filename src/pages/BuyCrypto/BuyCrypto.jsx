@@ -1,5 +1,6 @@
 import transakSDK from '@transak/transak-sdk'
 import { useEffect } from 'react';
+import { useMoralisWeb3Api } from 'react-moralis';
 import './buyCrypto.scss';
 
 
@@ -19,7 +20,7 @@ const BuyCrypto = () => {
     });
 
     useEffect(() => {
-
+ 
     }, [])
 
     const buyCrypto = () => {
@@ -32,13 +33,12 @@ const BuyCrypto = () => {
             transak.close()
         })
     }
-
+    
     return (
         <div className="swap-ctnr">
             <div id="ramp-container" onClick={() => buyCrypto()} className="card">
                 <h1 className='text-xl font-semibold'>Buy Crypto</h1>
             </div>
-            <h3 className='text-center mt-5'>Note that only Ethereum and Polygon network are available for swap.</h3>
         </div>
     )
 }

@@ -22,7 +22,7 @@ code {
 }
 
 // $gradient: 88deg, rgba(56,101,150,0.9) 0%, rgba(94,159,232,0.9) 48%, rgba(156,203,255,0.9) 100%;
-$gradient: 88deg, rgba(37, 116, 201, 0.9) 0%, rgba(91, 157, 233, 0.9) 48%, rgba(115, 164, 221, 0.9) 100%;
+$gradient: 88deg, rgba(37, 116, 201, 1) 0%, rgba(91, 157, 233, 1) 48%, rgba(115, 164, 221, 1) 100%;
 $gradient-hover: 80deg, rgb(14, 66, 126) 0%, rgb(49, 102, 163) 48%, rgb(89, 133, 184) 130%;
 
 $toolbar-height: 70px;
@@ -140,14 +140,14 @@ button.gradient-hover:hover{
 
 @keyframes playing {
   0% {
-      -webkit-transform: rotate(0deg);
+      // -webkit-transform: rotate(0deg);
       scale: 1;
   }
   50%{
-      scale: 1.2;
+      scale: 0.8;
   }
   100% {
-      -webkit-transform: rotate(360deg);
+      // -webkit-transform: rotate(360deg);
       scale: 1;
   }
 }

@@ -41,23 +41,18 @@
         display: flex;
         justify-content: center;
         min-width: 120px;
+        border: 2px solid transparent;
+ 
         // border-bottom: 1px solid var(--theme-color-blue);
         // transition: all 0.2s ease-in;
         // transition-property: border-radius, background-color;
         &:hover {
-          border-color: var(--theme-background) !important;
-          // background: linear-gradient($gradient);
-          background: linear-gradient($gradient);
-          color: #ffffff;
+          // border-bottom: 2px solid  var(--theme-color-blue);
+          color: var(--theme-color-blue)
         }
         
       }
-      & .sub-li {
-        // background-color: var(--theme-color-blue);
-        // color: var(--theme-background);
-        width: 100%;
-        font-weight: 600;
-      }
+
     }
   }
   & .right {

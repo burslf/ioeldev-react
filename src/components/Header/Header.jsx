@@ -57,17 +57,17 @@ const Header = (props) => {
                         {
                             menuList.map((m, i) => {
                                 return (
-                                    <div  key={i} className='group inline-block relative z-100'>
+                                    <li  key={i} className='group inline-block relative z-100'>
                                         <Link to={m.route}>
-                                            <button className='li py-2 hover:rounded-lg'>{m.name}</button>
+                                            <button className='li py-2 '>{m.name}</button>
                                         </Link>
 
-                                        <div className='absolute hidden text-gray-700 pt-1 group-hover:block z-100'>
+                                        <div className='absolute hidden pt-1 group-hover:block z-100'>
                                             {
                                                 m.sub && m.sub.map((s,i) => {
                                                     return (
                                                         <Link to={s.route} key={i}>
-                                                            <button className={`${s.isFirst && `rounded-t-lg`} ${s.isLast && `rounded-b-lg`} gradient sub-li py-2 gradient-hover rounded-t-lg whitespace-no-wrap z-100 hover:z-100`}>
+                                                            <button className={`${s.isFirst && `rounded-t-lg`} ${s.isLast && `rounded-b-lg`} gradient gradient-hover py-2 whitespace-no-wrap z-100 hover:z-100`}>
                                                                 {s.name}
                                                             </button>
                                                         </Link>
@@ -77,7 +77,7 @@ const Header = (props) => {
                                                 })
                                             }
                                         </div>
-                                    </div>
+                                    </li>
 
                                 )
                             })

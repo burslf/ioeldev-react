@@ -8,7 +8,10 @@ export const menuList = [
         name: "Songs",
         route: "/songs",
         sub: [
-            { name: "Upload", route: "/upload", isFirst: true, isLast: true}
+            { name: "Type Beats", route: "/upload", isFirst: true, isLast: false},
+            { name: "Drumkits", route: "/upload", isFirst: false, isLast: false},
+            { name: "Upload", route: "/upload", isFirst: false, isLast: true},
+            
         ]
     },
     {

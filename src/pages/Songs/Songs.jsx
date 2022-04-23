@@ -37,8 +37,6 @@ const Songs = () => {
 
     return (
         <div className='songs-ctnr'>
-            <h3 className='text-center text-2xl'>Songs</h3>
-
             <div className='songs-list'>
                 {
                     allSongs && allSongs.map((s, i) => {
@@ -61,13 +59,6 @@ const Songs = () => {
                                         }
                                     </div>
                                 </div>
-                                {/* <div className="audio">
-                                    <audio controls >
-                                        <source src={getGatewayUrl(s.source)} type="audio/mpeg" />
-                                    </audio>
-
-                                </div> */}
-
                             </div>
                         )
                     })
