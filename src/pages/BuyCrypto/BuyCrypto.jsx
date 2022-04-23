@@ -10,7 +10,7 @@ const BuyCrypto = () => {
         defaultCryptoCurrency: 'ETH',
         walletAddress: '', // Your customer's wallet address
         themeColor: '000000', // App theme color
-        fiatCurrency: 'USD', // INR/GBP
+        fiatCurrency: '', // INR/GBP
         email: '', // Your customer's email address
         redirectURL: '',
         hostURL: window.location.origin,
