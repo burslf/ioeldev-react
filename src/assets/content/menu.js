@@ -12,8 +12,8 @@ export const menuList = [
         ]
     },
     {
-        name: "Swap",
-        route: "/swap"
+        name: "Buy Cyrpto",
+        route: "/buy-crypto"
     },
 ]
 
@@ -32,7 +32,7 @@ export const menuListSidebar = [
         route: "/upload",
     },
     {
-        name: "Swap",
-        route: "/swap"
+        name: "Buy Crypto",
+        route: "/buy-crypto"
     },
 ]

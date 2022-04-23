@@ -1,0 +1,43 @@
+.tokens-overview {
+    display: flex;
+    flex-direction: column;
+    // min-height: 390px;
+    & .tokens {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        & .overflow-hidden {
+            width: 100%;
+            display: flex;
+            overflow-x: auto;
+        }
+        & .token {
+            flex-shrink: 0;
+            margin: 0px 10px;
+            width: 130px;
+            height: 140px;
+            // background-color: var(--card-color);
+            // overflow-y: hidden;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            & img {
+                object-fit: contain;
+                height: 75px;
+                width: 75px;
+                border: 2px solid var(--theme-color);
+                border-radius: 50%;
+            }
+            & span {
+                height: 30px;
+                text-align: center;
+                width: 100%;
+                overflow-wrap: break-word;
+                font-weight: 600;
+                color: var(--theme-color);
+            }
+        }
+    }
+}

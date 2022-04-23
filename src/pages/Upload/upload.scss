@@ -13,7 +13,8 @@
         transition: box-shadow 0.2s ease;
         margin: 10px;
         &:hover {
-            box-shadow: var(--theme-color-lightblue) 0px 5px 15px;        }
+            box-shadow: var(--theme-color-lightblue) 0px 5px 15px;        
+        }
     }
 }
 

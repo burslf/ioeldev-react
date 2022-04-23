@@ -21,9 +21,9 @@ import Sidebar from "./components/Sidebar/Sidebar"
 import Home from './pages/Home/Home';
 import Songs from './pages/Songs/Songs';
 import UploadSong from './pages/UploadSong/UploadSong';
-import Swap from './pages/Swap/Swap';
 import AudioPlayer from './components/AudioPlayer/AudioPlayer';
 import Upload from './pages/Upload/Upload';
+import BuyCrypto from './pages/BuyCrypto/BuyCrypto';
 
 function App() {
   const location = useLocation();
@@ -204,7 +204,7 @@ function App() {
           {/* <div className='layout' id='layout'> */}
             <Routes location={location}>
               <Route exact path='/' element={<Home />} />
-              <Route exact path='/swap' element={<Swap Moralis={Moralis} />} />
+              <Route exact path='/buy-crypto' element={<BuyCrypto Moralis={Moralis} />} />
               <Route exact path='/upload' element={<Upload Moralis={Moralis} />} />
               <Route exact path='/upload-song' element={<UploadSong Moralis={Moralis} />} />
               <Route exact path='/songs' element={<Songs Moralis={Moralis} />} />

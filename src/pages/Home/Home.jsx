@@ -1,18 +1,12 @@
 import './home.scss';
 import { useEffect, useState } from 'react';
 import BalanceCard from '../../components/BalanceCard/BalanceCard';
-import { balance, tokens } from '../../services/auth';
-import SingleABI from '../../assets/contract/SingleABI.json';
-import contractAddress from '../../assets/contract/contractAddress';
-import { useMoralis } from 'react-moralis';
-import { singles, songsService } from '../../services/songs';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { getGatewayUrl } from '../../utils/utils';
-import { currentSongId, playerService } from '../../services/player';
+import { tokens } from '../../services/auth';
+import { singles } from '../../services/songs';
+import { currentSongId } from '../../services/player';
+import CircleSlide from '../../components/CircleSlide/CircleSlide';
 
 const Home = () => {
-    const { Moralis } = useMoralis()
     const [userTokens, setTokens] = useState(null);
     const [allSingles, setAllSingles] = useState(null);
     const [currSongId, setCurrSongId] = useState(null);
@@ -25,11 +19,6 @@ const Home = () => {
         singles.subscribe(r => setAllSingles(r))
         currentSongId.subscribe(r => setCurrSongId(r))
     }, [])
-
-    const setCurrentSong = (currSong) => {
-        playerService.setShowPlayer(true)
-        playerService.setCurrentSong(currSong)
-    }
 
 
     return (
@@ -52,59 +41,10 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="tokens-overview">
-                <div className="head">
-                    <h1 className='font-semibold my-7 text-xl'>Singles</h1>
-                    <div className="see-all">
-                        <Link to={'/songs'}>
-                            <span className='cursor-pointer'>See all</span>
-                        </Link>
-                        {/* <mat-icon>keyboard_arrow_right</mat-icon> */}
-                    </div>
-                </div>
-                <div className="tokens">
-                    <div className="overflow-hidden">
-                        {
-                            allSingles
-                                ?
-                                allSingles.map((t, i) => {
-                                    return (
-                                        <div onClick={(e) => setCurrentSong(t)} className="token" key={i}>
-                                            <img className={(currSongId == t.id) ? "playing" : ""} src={t.artwork ? getGatewayUrl(t.artwork) : "/assets/images/no-logo.png"} alt="" srcSet="" />
-                                            <span className='mt-4 text-sm'>{t.song}</span>
-                                        </div>
-                                    )
-                                })
-                                :
-                                <div className="token" >
-                                </div>
-                        }
+            <CircleSlide title={'Type Beats'} currSongId={currSongId} allSingles={allSingles}></CircleSlide>
+            <CircleSlide title={'Drumkits'} currSongId={""} imageEmpty={'/assets/images/no-entry.png'} ></CircleSlide>
 
-                    </div>
-                </div>
 
-            </section >
-
-            <section className="tokens-overview">
-                <div className="head">
-                    <h1 className='font-semibold my-7 text-xl'>Albums</h1>
-                    <div className="see-all">
-                        <Link to={'/'}>
-                            <span className='cursor-pointer'>See all</span>
-                        </Link>
-                        {/* <mat-icon>keyboard_arrow_right</mat-icon> */}
-                    </div>
-                </div>
-                <div className="tokens">
-                    <div className="overflow-hidden">
-                        <div className="token" >
-                            <img src="/assets/images/no-entry.png" alt="" />
-                            <span className='mt-4 text-sm' >Coming Soon...</span>
-                        </div>
-                    </div>
-                </div>
-
-            </section >
 
         </div >
     )
